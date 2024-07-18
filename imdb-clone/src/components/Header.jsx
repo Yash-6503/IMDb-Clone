@@ -3,6 +3,7 @@ import MenuItem from './MenuItem';
 import { AiFillHome } from 'react-icons/ai';
 import { BsFillInfoCircleFill } from 'react-icons/bs';
 import Link from 'next/link';
+import DarkModeToggle from './DarkModeToggle';
 
 
 const Header = () => {
@@ -13,9 +14,13 @@ const Header = () => {
                 <MenuItem title="about" address="/about" Icon={BsFillInfoCircleFill} />
             </div>
 
-            <Link href={'/'} className='Logo w-full flex justify-end'>
-                <p className=' bg-amber-500 px-3 rounded-md text-black font-bold'>IMDb</p>
-            </Link>
+            <div className='flex gap-6 items-center'>
+                <DarkModeToggle />
+                <Link href={'/'} className='Logo w-full flex justify-end items-center gap-1 text-lg '>
+                    <p className=' bg-amber-500 px-2 rounded-md text-black font-bold'>IMDb</p>
+                    <p className='font-medium'>Clone</p>
+                </Link>
+            </div>
         </div>
     )
 }
